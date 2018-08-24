@@ -37,7 +37,7 @@ AI System Recognition physical object, traffic jams throught sensor, camera, con
 
 **[Robottics](https://en.wikipedia.org/wiki/Robotics): Là nghành robot học nghiên cứu robot có những chức năng như con người (đứa trẻ)**
 
-**[Hardware in loop](https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation)**: Là một ký thuật mô phỏng phát triển và kiểm thử hệ thống real time phức tạp mà không cần quá trình điều khiển và dây chuyền thực tế (bao gồm phần cứng và phần mềm) tức là chuyển dây chuyền xử lý trong phòng thí nghiệm như:
+**[Hardware in loop](https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation)**: Là một kỹ thuật mô phỏng phát triển và kiểm thử hệ thống real time phức tạp mà không cần quá trình điều khiển và dây chuyền thực tế (bao gồm phần cứng và phần mềm) tức là chuyển dây chuyền xử lý trong phòng thí nghiệm như:
   + Thử nghiệm phần cứng và phần mềm điều khiển ở điều kiện môi trường tới hạn trong phòng thí nghiệm (như nhiệt độ cao/thấp, gia tốc lớn và các cú sốc cơ học, thiết bị kích thích, tính tương thích điện từ).
   + Thử nghiệm các tác động của lỗi và tình trạng không mong đợi của cơ cấu chấp hành, cảm biến và máy tính trên toàn bộ hệ thống.
   + Vận hành và thử nghiệm các điều kiện vận hành tới hạn và nguy hiểm.
