@@ -7,14 +7,15 @@ AI System Recognition physical object, traffic jams throught sensor, camera, con
 
 ![](https://lh3.googleusercontent.com/_DwlzhmrBke8axAY9OOZl-akwSVhwOpdwpUWgYe8OeXpMynC8utNIwW5X3sgpRC5qA37RkW44nd1xgiuSEn0hHhSW59jPOYA3wydJHj6n3VosVySHJ_jL-1mxE-cSodUDCOXlXY6bgj1FuoGXwfUwczEMmK3gDv_MZTD92UDrsuMI3pLslnRObJwsoOUiiFHFb0-Cx91NAQZfwbW12DAM9Zu-OatABFp3JDzmKuDIwgxK7t16zwLkkiL0K3IJwetQXV3h49W8eTgSbNYTMjfB9Zj46277NzEiav7I3LsuaaB7pxlk6vzNn6uaIW8mqBt0DdxD7gW31j8-Na6I-swNtxLqHWxm1hgKwAzqm13do6s8pLKQGo4lz7NJox54TDEgYDXsRq0IyxbEIROVBqyuh7n2jrI61k_jwb_VkawFE4jo1jiYtkYLq6qJcsjBnx6pTn6YNvL8m5vGa7uRVi2pesv3mZU3DTy-bkiDinKB5BkTw44mMjXuMqcN7doND8rLkFVEyWxL1UEMWS2z-cWMYtHOn4lo5FyF-CNpOsHz6pfBfPGBhNtX8c9kiNF8trFFhhgbt7260jo8AZHdNup6V81PEi32sKcjom4eDJl58WTfchLZXX1yu2tx2flpDDGiWbzxx6CgfPHY6JMyCy6-ATnQt3hvZJk=w539-h380-no)
 
+**Combination of areas as robotics, self-driving cars, motion planning, sensor fusion, Lidar, radar, camera, IMU, GPS, Apollo, embedded system, machine learning, system architecture, connectivity, real-time system**
 
 **Operation System:**
-
+ 
  + QNX: https://blackberry.qnx.com/en
    + [Intro](https://en.wikipedia.org/wiki/QNX)
    + [Download](http://www.qnx.com/download/)
    + [Install in VMWare](https://youtu.be/3yjVaIwzPsc)
- + ROS: http://www.ros.org/
+ + ROS/ROS2: http://www.ros.org/
    + [Intro](http://wiki.ros.org/ROS/Introduction)
    + [Download and Install](http://www.ros.org/install/) or [watch video](https://youtu.be/9U6GDonGFHw)
    + ROS for self-driving
@@ -35,3 +36,7 @@ AI System Recognition physical object, traffic jams throught sensor, camera, con
 **Realtime communication (RTC)**
 
 **[Robottics](https://en.wikipedia.org/wiki/Robotics): Là nghành robot học nghiên cứu robot có những chức năng như con người (đứa trẻ)**
+
+**Hardware in loop**
+
+
