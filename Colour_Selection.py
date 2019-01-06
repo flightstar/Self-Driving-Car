@@ -23,7 +23,7 @@ rgb_threshold = [red_threshold, green_threshold, blue_threshold]
 
 #  Identify pixels below the threshold
 #  All colour converted black colour except white colour through thresholds function
-#  all pixels that meet my color criterion (those above the threshold) will be retained,
+#  All pixels that meet my color criterion (those above the threshold) will be retained,
 # and those that do not (below the threshold) will be blacked out.
 thresholds = (image[:,:,0] < rgb_threshold[0]) \
             | (image[:,:,1] < rgb_threshold[1]) \
