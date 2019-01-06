@@ -43,7 +43,8 @@ AI System Recognition physical object, traffic jams throught sensor, camera, con
   + Vận hành và thử nghiệm các điều kiện vận hành tới hạn và nguy hiểm.
   + Các thử nghiệm tái sinh, có thể lặp lại thường xuyên.
   + Vận hành dễ dàng với các giao diện người-máy khác nhau như buồng tập lái mô phỏng máy bay
-  
+
+### Select colour
   ![](https://lh3.googleusercontent.com/W4PxyxfksZk20n88ZtNEAhs0QLhMIEMTUZKlREgpoxlhf1mHXMhapkBvpyYcWbL9nCFNs-GAdMGc04bvX_2I7G7wHmEbczQZHnkFcgH79OhFc6nq6pvAOz_CFSD9QwiW_GMQQHzeDNC9NFOdbJR5aVsl2ZtOJ4vxa6bE6zVqZhVfkvW2WnbFcs0zMVT3Ir5SNk5v1y6J_9UwskzxvTCPF9b-vMcU9RQkwIvgNJdhAlCrenxY8loQDo4cVpblGN4RMqfhrkgtb3vo2AMpNC0XbHF_TwMixMXACjb1hUdKNGLM8LbAKP56_O3c1ciN9CgbCL0HwZ7-pPM8vdKDhnOYVrBwZe-ZishhVQAjPnnnidQ8bKLhKJebqArLfVcLq_6OMmJu3ljv2KzpbV1xHFPDBkD6sU2MVazCnqEQUu6oaw2YUe34xBhkSaK5Ri5iP6vYY0gOZogfg_37yejs9xU9gQKqTtLps6HDzOdt24NoOeZbsQuYnT6-v2iS31XT0lhyVpPWy-cDlcqnJJf6MOXg0mkmavWFnEf5NtYlIVs78Fsz1lRRE7VaaNKiElRz1WVZEH_Ks6Hy_w0_bHl-FB8fzMu1E3-vNJCWlZzalErLzd5v2k0Swk9qku3aW234J2JI7K_niIFMjr-h2-z4rboQ8KQOVNWRrjgqShhzz5tJTJ60hyTjUAkOG1Kd3lI4l7hGBtti39HhQl0500kDrQ=w783-h226-no)
   
   [Source code](/Colour_Selection.py)
