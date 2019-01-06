@@ -45,7 +45,7 @@ region_thresholds = (YY > (XX*fit_left[0] + fit_left[1])) & \
                     (YY < (XX*fit_bottom[0] + fit_bottom[1]))
                     
 # Mask color and region selection
-# color_select[color_thresholds | ~region_thresholds] = [0, 0, 0]
+# color_select[~region_thresholds] = [0, 0, 0]
 color_select[color_thresholds | ~region_thresholds] = [0, 0, 0]
 # Color pixels red where both color and region selections met
 line_image[~color_thresholds & region_thresholds] = [255, 0, 0]
