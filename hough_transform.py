@@ -13,8 +13,8 @@ kernel_size = 5
 blur_gray = cv2.GaussianBlur(gray,(kernel_size, kernel_size),0)
 
 # Define our parameters for Canny and apply
-low_threshold = 50
-high_threshold = 150
+low_threshold = 100
+high_threshold = 210
 edges = cv2.Canny(blur_gray, low_threshold, high_threshold)
 
 # Next we'll create a masked edges image using cv2.fillPoly()
