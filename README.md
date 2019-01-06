@@ -64,7 +64,7 @@ AI System Recognition physical object, traffic jams throught sensor, camera, con
 ### [Canny Edge Detection](https://en.wikipedia.org/wiki/Canny_edge_detector)
 Là thuật toán dò các cạnh được John F. Canny đưa ra vào năm 1986  
 
-![](/Resource/mainroad.jpg)     ![](/Resource/mainroad_canny.jpg)
+<img src="/Resource/mainroad.jpg" alt="Mainroad" width="400"/>     <img src="/Resource/mainroad_canny.jpg" alt="Mainroad" width="400"/>
 
 [Source Code](/Canny_Algorithm_Detect_Land_Line.py)
 ### Region of Interest Selection
