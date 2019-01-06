@@ -8,7 +8,6 @@ image = mpimg.imread('test.jpg')
 # Grab the x and y size and make a copy of the image
 ysize = image.shape[0]
 xsize = image.shape[1]
-color_select = np.copy(image)
 line_image = np.copy(image)
 
 # Define color selection criteria
