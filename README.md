@@ -60,4 +60,10 @@ AI System Recognition physical object, traffic jams throught sensor, camera, con
   
   [Source Code](/Colour_Region_Masking.py)
   
+### Canny Edge Detection
+Là thuật toán dò các cạnh được John F. Canny đưa ra vào năm 1986  
+### Region of Interest Selection
+### Hough Transform Line Detection
+
+  
 
