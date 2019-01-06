@@ -16,9 +16,9 @@ color_select = np.copy(image)
 # Define our color selection criteria
 # Note: if you run this code, you'll find these are not sensible values
 # #000000
-red_threshold = 0
-green_threshold = 0
-blue_threshold = 0
+red_threshold = 200
+green_threshold = 200
+blue_threshold = 200
 rgb_threshold = [red_threshold, green_threshold, blue_threshold]
 
 #  Identify pixels below the threshold
