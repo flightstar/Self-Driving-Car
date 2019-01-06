@@ -3,7 +3,6 @@ import matplotlib.image as mpimg
 import numpy as np
 import cv2
 
-
 # Read in and grayscale the image
 image = mpimg.imread('exit-ramp.jpg')
 gray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
