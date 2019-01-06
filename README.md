@@ -68,7 +68,16 @@ Là thuật toán dò các cạnh được John F. Canny đưa ra vào năm 1986
 
 [Source Code](/Canny_Algorithm_Detect_Land_Line.py)
 ### Region of Interest Selection
-### Hough Transform Line Detection
+
+### [Hough Space](https://en.wikipedia.org/wiki/Hough_transform) Transformation of the Line Detection
+In image space, a line is plotted as x vs. y, but in 1962, **Paul Hough** devised a method for representing lines in **parameter space**, which we will call **Hough space** in his honor.
+
+![](https://lh3.googleusercontent.com/bSeQIpHGIrr_eJNDH7QpJ1xSgr5pMPGDzBq9sF-nOKRFHE3hx-Q1Rr0LWpeH9jO2j27HHZBXIiyK-Cip-hunsctbAgX-HmHIlYLC6T_5CqLY8qzDPMD4WQqgJetuM8QWgy9FxubVGq1axA5xoQ2WJY-vAvw8lZF08VPIR1bjLuSApQ8pq8yc8bpzYXDRbilDVx613Ko3oel4NYhffd_A2JbuQbpdKyY6Nl7pIAB5p8gsPvF1fskYF-n-QZdMGRhV3hvQbcEME1D06frI9KhlITMlart7hsfJDbXK51pl_CXoa-HVP4dIUsIITAKF_5rMxi14BwqTrKapgSXjZjzbpybptoOxYsNU4wba0RKwO0ljHKqsjysSp8368jAtLtCFtIv1sHnGViQ6-1XeB06fSI7zuLlhClJj9afUbnrTiQUCgCsInJm-vV6VzOaYyP4WCFXRRc1HzyGLtI0g6VS4QcyhVjgnEomjGTcFSYYyBP0XpTLXpoIcLEdKa79mEcao75T6j2nxSD6-NdVxCMJWpKD5xwSvoi8RT6kj5pJG5t647tb1qkV-2ItDybkLSk8XH7kEbuUb_v7eApYhpt_2mRwj2ANCrttHW9I89-3lA0W8CJhJyFfWY-MWQstfLFNrxDyyMvIPj9R7yLAaYbzL5iZlLnqUG8wJ-b0WNZVgTJdj0LVmj6ZO4ZPwLcQq64s51E1qHieExoHm4lYpuQ=w548-h347-no)
+
+In Hough space, I can represent my **x vs. y line as a point in m vs. b instead**. The Hough Transform is just the conversion from image space to Hough space. So, the characterization of a line in image space will be a single point at the position (m, b) in Hough space.
+
+![](https://lh3.googleusercontent.com/kg60sZ55kgMs92y6DpEbAH033OFFAriJSHFE1GmBLcyi7X0OEkrBDCEXDBHVdLumri5dbEtonIhWqcD_rS-9_BOA9wRjKeyzcE70fdRzccJDsAM1-EXkEEXy6iExQlV7FViSS30g_AVwDMqhoHYyY1ayqsgK7Pe9jSLHW7t_hrrRFQATJ1ipvL3BAtIJt0sgbktOoWuqlc2VZPTn8MweKMpjxcQGO5jbAB9lhx2bNxwtxnJBZMG4-cIFCVKYNU4jusmZue0ugCugKMlQPoiDNqp_L1YVdeQdkT9dlkTf0LNKDM4Ml5mqyK3Mk1P44pLZYlw0r0Xv-IvnIK4T67HVPDU8HeF4CDg4tL_YrENBhdcpZq8goIyOVCgzidyZ9coTNHktVaNUZTj--E18ggxPxZJrgKKMsTCUjQzzSdFYwu_uwnf3LAveLFHMx42rk8mCKVfBxlQzpVOc_WbFGE9z1BYV6ebYhcXb0xjvTmcHverqbeoEX_7kd-ZSC-ZfpH_CrHRt4iFEoCbzKNE9HBFSBWIKFFOPq4C3o5logJrUGaklwW7HUaAqwTV1CwdpYhQ5WsEqFzh8PeogmNb1QLXFR9Asq2MsNwz-E0lL9SLWIPglkuSM5uUIIvhcF1s5irWYBtl9Kek-5RlfQtU3sMor2zRDq-aJv3js0a80LU2xTKJtiZntxTf7yKk8aS_DfVtbdmPhhGwuEswRZuAB7Q=w678-h347-no)
+
 
   
 
