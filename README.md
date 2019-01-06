@@ -70,7 +70,7 @@ Là thuật toán dò các cạnh được John F. Canny đưa ra vào năm 1986
 ### Region of Interest Selection
 
 ### [Hough Space](https://en.wikipedia.org/wiki/Hough_transform) Transformation of the Line Detection
-In image space, a line is plotted as x vs. y, but in 1962, **Paul Hough** devised a method for representing lines in **parameter space**, which we will call **Hough space** in his honor.
+In image space, a line is plotted as x vs. y, but in 1962, **Paul Hough** devised a method for representing lines in **parameter space**, which we will call **Hough space** in his honor. [Read more about Hough Transform](https://alyssaq.github.io/2014/understanding-hough-transform/)
 
 ![](https://lh3.googleusercontent.com/bSeQIpHGIrr_eJNDH7QpJ1xSgr5pMPGDzBq9sF-nOKRFHE3hx-Q1Rr0LWpeH9jO2j27HHZBXIiyK-Cip-hunsctbAgX-HmHIlYLC6T_5CqLY8qzDPMD4WQqgJetuM8QWgy9FxubVGq1axA5xoQ2WJY-vAvw8lZF08VPIR1bjLuSApQ8pq8yc8bpzYXDRbilDVx613Ko3oel4NYhffd_A2JbuQbpdKyY6Nl7pIAB5p8gsPvF1fskYF-n-QZdMGRhV3hvQbcEME1D06frI9KhlITMlart7hsfJDbXK51pl_CXoa-HVP4dIUsIITAKF_5rMxi14BwqTrKapgSXjZjzbpybptoOxYsNU4wba0RKwO0ljHKqsjysSp8368jAtLtCFtIv1sHnGViQ6-1XeB06fSI7zuLlhClJj9afUbnrTiQUCgCsInJm-vV6VzOaYyP4WCFXRRc1HzyGLtI0g6VS4QcyhVjgnEomjGTcFSYYyBP0XpTLXpoIcLEdKa79mEcao75T6j2nxSD6-NdVxCMJWpKD5xwSvoi8RT6kj5pJG5t647tb1qkV-2ItDybkLSk8XH7kEbuUb_v7eApYhpt_2mRwj2ANCrttHW9I89-3lA0W8CJhJyFfWY-MWQstfLFNrxDyyMvIPj9R7yLAaYbzL5iZlLnqUG8wJ-b0WNZVgTJdj0LVmj6ZO4ZPwLcQq64s51E1qHieExoHm4lYpuQ=w548-h347-no)
 
