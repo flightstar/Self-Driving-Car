@@ -99,6 +99,7 @@ In Hough space, I can represent my **x vs. y line as a point in m vs. b instead*
 + [Canny Edge Detection](#canny-edge-detection-algorithm)
 + [Detect the edges](#detect-the-edges)
 + [Region of Interest Selection](#region-of-interest-selection-method)
++ [Extrapolation in Land Lines](extrapolating-land-lines)
 + [Hough Transform Line Detection](#hough-transform-line-detection)
 
 các hình ảnh input đầu vào 
@@ -248,4 +249,5 @@ show_images(roi_images)
 ```
 
 ![](/Resource/test_image13.png)
+##### Extrapolating Land Lines
 ##### Hough Transform Line Detection
