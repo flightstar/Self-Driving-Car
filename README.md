@@ -249,5 +249,44 @@ show_images(roi_images)
 ```
 
 ![](/Resource/test_image13.png)
-##### Extrapolating Land Lines
 ##### Hough Transform Line Detection
++ Using [cv2.HoughLinesP](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_houghlines/py_houghlines.html) to detect lines in the edge images
++ Several parameters of the above function:
+  + rho: Distance resolution of the accumulator in pixels.
+  + theta: Angle resolution of the accumulator in radians.
+  + threshold: Accumulator threshold parameter. Only those lines are returned that get enough votes (> threshold).
+  + minLineLength: Minimum line length. Line segments shorter than that are rejected.
+  + maxLineGap: Maximum allowed gap between points on the same line to link them.
+  
+  ```py
+  import matplotlib.pyplot as plt
+  import matplotlib.image as mpimg
+  import numpy as np
+  import cv2
+
+  def draw_lines(img, lines, color = [255, 0, 0], thickness = 2):
+    imgCopy = np.copy(img)
+    for line in lines:
+        for x1,y1,x2,y2 in line:
+            cv2.line(imgCopy, (x1, y1), (x2, y2), color, thickness)
+    return imgCopy
+
+  def hough_lines(img):
+    rho = 1
+    theta = np.pi/180
+    threshold = 20
+    min_line_length = 20
+    max_line_gap = 300
+    return cv2.HoughLinesP(img, rho, theta, threshold, np.array([]), minLineLength=min_line_length, maxLineGap=max_line_gap)
+  if __name__ == '__main__':
+    list_of_lines = list(map(hough_lines, roi_images))
+    line_images = []
+    # zip() used for mapping similar index, value of multiple containers of zip() compress
+    for image, lines in zip(test_images, list_of_lines):
+        line_images.append(draw_lines(image, lines))
+    show_images(line_images)
+
+  ```
+  
+  ![](/Resource/test_image14.png)
+##### Extrapolating Land Lines
