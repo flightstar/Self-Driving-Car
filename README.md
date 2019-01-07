@@ -185,10 +185,25 @@ def select_white_yellow(image):
 if __name__ == "__main__":
     # test_image: Folder contain images test
     # Return a list images
-    white_yellow_images = list(map(select_white_yellow, test_images))
+    white_yellow_images = list(map(select_white_yellow, "/test_images"))
     show_images(white_yellow_images)
 ```
 ##### Canny Edge Detection Algorithm 
++ If a pixel gradient is higher than the upper threshold, the pixel is accepted as an edge
++ If a pixel gradient value is below the lower threshold, then it is rejected.
++ If the pixel gradient is between the two thresholds, then it will be accepted only if it is connected to a pixel that is above the upper threshold.
+
+```py
+def canny(image):
+    low_threshold=50
+    high_threshold=150
+    return cv2.Canny(image, low_threshold, high_threshold)
+if __name__ == "main":
+   edge_images = list(map(canny, "/test_images"))
+   show_images(edge_images)
+```
+
+![](/Resource/test_image12.png)
 ##### Detect the edges
 ##### Region of Interest Selection Method
 ##### Hough Transform Line Detection
