@@ -161,6 +161,7 @@ cv2.imshow('test_image', image)
 ```py
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import os, glob
 import numpy as np
 import cv2
 def show_images(images):
@@ -186,6 +187,8 @@ def select_white_yellow(image):
 if __name__ == "__main__":
     # test_image: Folder contain images test
     # Return a list images
+    test_images = []
+    test_images = [plt.imread(path) for path in glob.glob('test_images/*.jpg')]
     white_yellow_images = list(map(select_white_yellow, test_images))
     show_images(white_yellow_images)
 ```
