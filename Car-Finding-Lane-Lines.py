@@ -50,6 +50,10 @@ def process_video(video_input, video_output):
     # Returns a copy of the clip with a new default fps and filter the audio
     processed.write_videofile(os.path.join('output_videos', video_output), audio=False)
     
-if __name__ = __main__:
+if __name__ == "__main__":
+    process_video('Resource/challenge_input1.mp4', 'Resource/challenge_output1.mp4')
+    process_video('Resource/challenge_input2.mp4', 'Resource/challenge_output2.mp4')
+    process_video('Resource/challenge_input3.mp4', 'Resource/challenge_output3.mp4')
+
     
     
