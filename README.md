@@ -152,6 +152,41 @@ cv2.imshow('test_image', image)
 ```
 
 ![](/Resource/test_image5.png)
+
++ **cv2.inRange**: Filter the white color and the yellow color seperately. The function returns 255 when the filter conditon is satisfied. Otherwise, it returns 0.
++ **cv2.bitwise_or** to combine these two binary masks. The combined mask returns 255 when either white or yellow color is detected.
++ **cv2.bitwise_and** to apply the combined mask onto the original RGB image
+
+```py
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
+import cv2
+def show_images(images):
+    cols = 3
+    rows = 2
+    plt.figure(figsize=(15, 5))
+    for i in range(0, len(images)):
+        plt.subplot(rows, cols, i+1)
+        plt.imshow(images[i], cmap="gray")
+    plt.show()
+
+def select_white_yellow(image):
+    converted = convert_hls(image)
+    lower = np.uint8([  0, 200,   0])
+    upper = np.uint8([255, 255, 255])
+    white_mask = cv2.inRange(converted, lower, upper)
+    lower = np.uint8([ 10,   0, 100])
+    upper = np.uint8([ 40, 255, 255])
+    yellow_mask = cv2.inRange(converted, lower, upper)
+    mask = cv2.bitwise_or(white_mask, yellow_mask)
+    return cv2.bitwise_and(image, image, mask = mask)
+
+# test_image: Folder contain images test
+# Return a list images
+white_yellow_images = list(map(select_white_yellow, test_images))
+show_images(white_yellow_images)
+```
 ##### Canny Edge Detection Algorithm 
 ##### Detect the edges
 ##### Region of Interest Selection Method
