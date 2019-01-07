@@ -285,6 +285,7 @@ show_images(roi_images)
   import matplotlib.image as mpimg
   import numpy as np
   import cv2
+  import os, glob
 
   def draw_lines(img, lines, color = [255, 0, 0], thickness = 2):
     imgCopy = np.copy(img)
