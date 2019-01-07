@@ -128,10 +128,10 @@ def select_rgb_white_yellow(image):
 ![](/Resource/test_image2.png)
 
 ```py
-# HSV Color Space
 import numpy as np
 import cv2
 
+# HSV Color Space
 def convert_hsv(image):
     return cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
 image = convert_hsv("/Resource/test_image.png")
@@ -144,6 +144,7 @@ cv2.imshow('test_image', image)
 import numpy as np
 import cv2
 
+# HLS Colour Space
 def convert_hls(image):
     return cv2.cvtColor(image, cv2.COLOR_RGB2HLS)
 image = convert_hsv("/Resource/test_image.png")
