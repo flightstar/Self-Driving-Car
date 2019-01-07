@@ -185,7 +185,7 @@ def select_white_yellow(image):
 if __name__ == "__main__":
     # test_image: Folder contain images test
     # Return a list images
-    white_yellow_images = list(map(select_white_yellow, "/test_images"))
+    white_yellow_images = list(map(select_white_yellow, test_images))
     show_images(white_yellow_images)
 ```
 ##### Canny Edge Detection Algorithm 
@@ -199,11 +199,53 @@ def canny(image):
     high_threshold=150
     return cv2.Canny(image, low_threshold, high_threshold)
 if __name__ == "main":
-   edge_images = list(map(canny, "/test_images"))
+   edge_images = list(map(canny, test_images))
    show_images(edge_images)
 ```
 
 ![](/Resource/test_image12.png)
 ##### Detect the edges
 ##### Region of Interest Selection Method
+When finding lane lines, we don't need to check the sky and the hills.
+
+```py
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
+import cv2
+
+def show_images(images):
+    cols = 3
+    rows = 2
+    plt.figure(figsize=(15, 5))
+    for i in range(0, len(images)):
+        plt.subplot(rows, cols, i+1)
+        plt.imshow(images[i], cmap="gray")
+    plt.show()
+def filter_region(image, vertices):
+#   Create the mask using the vertices and apply it to the input image
+    mask = np.zeros_like(image)
+#   Images 2 dimessions x, y 
+    if len(mask.shape) == 2:
+        cv2.fillPoly(mask, vertices, 255)
+    else:
+        cv2.fillPoly(mask, vertices, (255,)*mask.shape[2]) # in case, the input image has a channel dimension        
+    return cv2.bitwise_and(image, mask)
+    
+def select_region(image):
+    # first, define the polygon by vertices
+    rows, cols = image.shape[:2]
+    bottom_left  = [cols*0.1, rows*0.95]
+    top_left     = [cols*0.4, rows*0.6]
+    bottom_right = [cols*0.9, rows*0.95]
+    top_right    = [cols*0.6, rows*0.6] 
+    # the vertices are an array of polygons (i.e array of arrays) and the data type must be integer
+    vertices = np.array([[bottom_left, top_left, top_right, bottom_right]], dtype=np.int32)
+    return filter_region(image, vertices)
+
+roi_images = list(map(select_region, test_images))
+show_images(roi_images)
+```
+
+![](/Resource/test_image13.png)
 ##### Hough Transform Line Detection
