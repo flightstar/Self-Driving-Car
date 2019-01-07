@@ -44,6 +44,8 @@ AI System Recognition physical object, traffic jams throught sensor, camera, con
   + Các thử nghiệm tái sinh, có thể lặp lại thường xuyên.
   + Vận hành dễ dàng với các giao diện người-máy khác nhau như buồng tập lái mô phỏng máy bay
 
+Bạn nên hiểu bản chất của những phương pháp xử lý ảnh camera để tạo sự thú vị và yêu thích môn học về xe không người lái.
+
 ### Select colour
   ![](https://lh3.googleusercontent.com/W4PxyxfksZk20n88ZtNEAhs0QLhMIEMTUZKlREgpoxlhf1mHXMhapkBvpyYcWbL9nCFNs-GAdMGc04bvX_2I7G7wHmEbczQZHnkFcgH79OhFc6nq6pvAOz_CFSD9QwiW_GMQQHzeDNC9NFOdbJR5aVsl2ZtOJ4vxa6bE6zVqZhVfkvW2WnbFcs0zMVT3Ir5SNk5v1y6J_9UwskzxvTCPF9b-vMcU9RQkwIvgNJdhAlCrenxY8loQDo4cVpblGN4RMqfhrkgtb3vo2AMpNC0XbHF_TwMixMXACjb1hUdKNGLM8LbAKP56_O3c1ciN9CgbCL0HwZ7-pPM8vdKDhnOYVrBwZe-ZishhVQAjPnnnidQ8bKLhKJebqArLfVcLq_6OMmJu3ljv2KzpbV1xHFPDBkD6sU2MVazCnqEQUu6oaw2YUe34xBhkSaK5Ri5iP6vYY0gOZogfg_37yejs9xU9gQKqTtLps6HDzOdt24NoOeZbsQuYnT6-v2iS31XT0lhyVpPWy-cDlcqnJJf6MOXg0mkmavWFnEf5NtYlIVs78Fsz1lRRE7VaaNKiElRz1WVZEH_Ks6Hy_w0_bHl-FB8fzMu1E3-vNJCWlZzalErLzd5v2k0Swk9qku3aW234J2JI7K_niIFMjr-h2-z4rboQ8KQOVNWRrjgqShhzz5tJTJ60hyTjUAkOG1Kd3lI4l7hGBtti39HhQl0500kDrQ=w783-h226-no)
   
@@ -314,4 +316,76 @@ These lines are not smooth in image. Because there are multiple lines in images.
 
 We'll collect positive slope lines and negative slope lines separately and take averages.
 
+```py
+def average_slope_intercept(lines):
+    left_lines    = [] # (slope, intercept)
+    left_weights  = [] # (length,)
+    right_lines   = [] # (slope, intercept)
+    right_weights = [] # (length,)
+    
+    for line in lines:
+        for x1, y1, x2, y2 in line:
+            if x2==x1:
+                continue # ignore a vertical line
+            # Do doc
+            slope = (y2-y1)/(x2-x1)
+            # Mat phang duong
+            intercept = y1 - slope*x1
+            # Dien tich cua line bao quanh
+            length = np.sqrt((y2-y1)**2+(x2-x1)**2)
+            if slope < 0: # y is reversed in image
+                left_lines.append((slope, intercept))
+                left_weights.append((length))
+            else:
+                right_lines.append((slope, intercept))
+                right_weights.append((length))
+    # add more weight to longer lines    
+    left_lane  = np.dot(left_weights,  left_lines) /np.sum(left_weights)  if len(left_weights) >0 else None
+    right_lane = np.dot(right_weights, right_lines)/np.sum(right_weights) if len(right_weights)>0 else None
+    
+    return left_lane, right_lane # (slope, intercept), (slope, intercept)
 
+def lane_lines(image, lines):
+    left_lane, right_lane = average_slope_intercept(lines)
+    
+    y1 = image.shape[0] # bottom of the image
+    y2 = y1*0.6         # slightly lower than the middle
+    
+#   Convert a line represented in slope and intercept into pixel points
+    if (left_lane is None) or (right_lane is None) :
+        raise Exception('not detecting')
+
+    slope, intercept = left_lane
+    x1 = int((y1 - intercept)/slope)
+    x2 = int((y2 - intercept)/slope)
+    y1 = int(y1)
+    y2 = int(y2)
+    
+    left_line = ((x1, y1), (x2, y2))
+    slope, intercept = right_lane
+    x1 = int((y1 - intercept)/slope)
+    x2 = int((y2 - intercept)/slope)
+    y1 = int(y1)
+    y2 = int(y2)
+    
+    right_line = ((x1, y1), (x2, y2))
+    return left_line, right_line
+
+def draw_lane_lines(image, lines, color=[255, 0, 0], thickness=20):
+    line_image = np.zeros_like(image)
+    for line in lines:
+        if line is not None:
+            cv2.line(line_image, *line,  color, thickness)
+    return cv2.addWeighted(image, 1.0, line_image, 0.95, 0.0)
+             
+if __name__ == '__main__':
+    lane_images = []
+    for image, lines in zip(test_images, list_of_lines):
+        lane_images.append(draw_lane_lines(image, lane_lines(image, lines)))    
+    show_images(lane_images)
+
+```
+
+![](/Resource/test_image15.png)
+
+##### Image Lane Finding Pipeline
