@@ -213,6 +213,20 @@ blurred_images = list(map(lambda image: apply_smoothing(image), gray_images))
 + If the pixel gradient is between the two thresholds, then it will be accepted only if it is connected to a pixel that is above the upper threshold.
 
 ```py
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import numpy as np
+import cv2
+
+def show_images(images):
+    cols = 3
+    rows = 2
+    plt.figure(figsize=(15, 5))
+    for i in range(0, len(images)):
+        plt.subplot(rows, cols, i+1)
+        plt.imshow(images[i], cmap="gray")
+    plt.show()
+    
 def canny(image):
     low_threshold = 50
     high_threshold = 150
@@ -229,19 +243,6 @@ if __name__ == "main":
 When finding lane lines, we don't need to check the sky and the hills.
 
 ```py
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import numpy as np
-import cv2
-
-def show_images(images):
-    cols = 3
-    rows = 2
-    plt.figure(figsize=(15, 5))
-    for i in range(0, len(images)):
-        plt.subplot(rows, cols, i+1)
-        plt.imshow(images[i], cmap="gray")
-    plt.show()
 def filter_region(image, vertices):
 #   Create the mask using the vertices and apply it to the input image
     mask = np.zeros_like(image)
