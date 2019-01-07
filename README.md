@@ -91,3 +91,13 @@ In Hough space, I can represent my **x vs. y line as a point in m vs. b instead*
 ### Project: Detect Land through Camera
    
    ![](https://lh3.googleusercontent.com/xAafxM0hyLM5_HO7G32h4xgDnOvYlC2tvpiGe317zj4diMoaFZ7iUVWFncXfoR1JFIxsaKCtodAaIoI5q6larMAYMKU7p7auDb75380LDCBns9Qo2MwpjeljAyYyp5HbQZaqaequxBCUYvQpoPEDMYzP4EF172ScQ5CBn23xA0iKJisxgiG6-W4yI1QmXWsBjuMWEKKZxVdy4-CRhVy324G4LDIqdVnMRV_L7m1FGAgXRvCeraQ67hywuniqWFbJ87oW966aHXSXp7vAYBvLbkT4JKlsgZHaRpfKqsI3Jk1AdRwBLHm4B1ADHJM1_s7pt8WOo7-yZQ7iuehPyX-Z6ZgWxlR6Lpgff3OX3jbdAvpJ0NgI6N4xknD6af_BXEliRP9qGOHdgkjA1B3_TMFQuz8jGH1LGsPsWtO2bund1zcRBeMjHs1MkVWZm1hqOcCny6ilwWASrtJ7WCEGadLu9jlTxZHfgYt3X2Gp0kAK15j7wt2NvcsVFInkIKX2S6oFyWUV43Tri7WXyJK-_uZHTcgM6O1Um2p1cS5LhP2PVJs-dLZanHv54W7tO77eTvHchnxQfX1ndjFQbdk_EuRYC69NngN-gsd-YngFHi2Hyqe_g3dknSIKaphb75EroDJVjb2Jue8WVAuvi5RkOdEEM0Oj7XcgqGuZVlJG1LtHHp97cPePsrr0ek_S9tpwcbdN86TCfp8IUovcwvkZWA=w776-h368-no)
+   
+   [Source Code](/Car-Finding-Lane-Lines.py)
+   
+#### Terminology & analysis
++ Color Selection
++ Canny Edge Detection
++ Detect the edges
++ Region of Interest Selection
++ Hough Transform Line Detection
+
