@@ -159,19 +159,9 @@ cv2.imshow('test_image', image)
 + **cv2.bitwise_and** to apply the combined mask onto the original RGB image
 
 ```py
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import os, glob
 import numpy as np
 import cv2
-def show_images(images):
-    cols = 3
-    rows = 2
-    plt.figure(figsize=(15, 5))
-    for i in range(0, len(images)):
-        plt.subplot(rows, cols, i+1)
-        plt.imshow(images[i], cmap="gray")
-    plt.show()
 
 def select_white_yellow(image):
     converted = convert_hls(image)
@@ -184,14 +174,12 @@ def select_white_yellow(image):
     mask = cv2.bitwise_or(white_mask, yellow_mask)
     return cv2.bitwise_and(image, image, mask = mask)
 
-if __name__ == "__main__":
-    # test_image: Folder contain images test
-    # Return a list images
-    test_images = []
-    test_images = [plt.imread(path) for path in glob.glob('test_images/*.jpg')]
-    white_yellow_images = list(map(select_white_yellow, test_images))
-    show_images(white_yellow_images)
+test_images = []
+test_images = [plt.imread(path) for path in glob.glob('test_images/*.jpg')]
+white_yellow_images = list(map(select_white_yellow, test_images))
 ```
+
+![](/Resource/test_image6.png)
 ##### Canny Edge Detection Algorithm 
 + If a pixel gradient is higher than the upper threshold, the pixel is accepted as an edge
 + If a pixel gradient value is below the lower threshold, then it is rejected.
@@ -202,6 +190,7 @@ def canny(image):
     low_threshold=50
     high_threshold=150
     return cv2.Canny(image, low_threshold, high_threshold)
+    
 if __name__ == "main":
    edge_images = list(map(canny, test_images))
    show_images(edge_images)
