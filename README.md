@@ -244,7 +244,7 @@ def select_region(image):
     vertices = np.array([[bottom_left, top_left, top_right, bottom_right]], dtype=np.int32)
     return filter_region(image, vertices)
 
-roi_images = list(map(select_region, test_images))
+roi_images = list(map(select_region, edge_images))
 show_images(roi_images)
 ```
 
