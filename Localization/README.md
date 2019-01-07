@@ -1,0 +1,2 @@
+Localization is how we determine where our vehicle is in the world. **GPS is only accurate to within a few meters**. We need single-digit centimeter-level accuracy! To achieve this, Mercedes-Benz engineers will demonstrate the principles of [Markov localization](http://correll.cs.colorado.edu/?p=1319) to program a particle filter, which uses data and a map to determine the precise location of a vehicle.
+
