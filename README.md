@@ -181,18 +181,45 @@ white_yellow_images = list(map(select_white_yellow, test_images))
 
 ![](/Resource/test_image6.png)
 ##### Canny Edge Detection Algorithm 
++ use **cv2.cvtColor** to convert images into gray scale
++ use **cv2.GaussianBlur** to smooth out rough edges
++ use **cv2.Canny** to find edges
+
+###### Gray Scaling
+Converted into gray scaled ones in order to detect shapes (edges) in the images. This is because the Canny edge detection measures the magnitude of pixel intensity changes or gradients. I converted the white and yellow line images from the above into gray scale for edge detection.
+
+```py
+def convert_gray_scale(image):
+    return cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+gray_images = list(map(convert_gray_scale, white_yellow_images))
+```
+
+![](/Resource/test_image7.png)
+
+###### Gaussian Smoothing
+The above images have many rough edges which causes many noisy edges to be detected. We use cv2.GaussianBlur to smooth out edges.
+
+```py
+def apply_smoothing(image, kernel_size=15):
+#   kernel_size must be postivie and odd
+#   kernel_size value requires more time to process
+    return cv2.GaussianBlur(image, (kernel_size, kernel_size), 0)
+blurred_images = list(map(lambda image: apply_smoothing(image), gray_images))
+```
+
+![](/Resource/test_image8.png)
 + If a pixel gradient is higher than the upper threshold, the pixel is accepted as an edge
 + If a pixel gradient value is below the lower threshold, then it is rejected.
 + If the pixel gradient is between the two thresholds, then it will be accepted only if it is connected to a pixel that is above the upper threshold.
 
 ```py
 def canny(image):
-    low_threshold=50
-    high_threshold=150
+    low_threshold = 50
+    high_threshold = 150
     return cv2.Canny(image, low_threshold, high_threshold)
     
 if __name__ == "main":
-   edge_images = list(map(canny, test_images))
+   edge_images = list(map(lambda image: detect_edges(image), blurred_images))
    show_images(edge_images)
 ```
 
