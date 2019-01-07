@@ -98,7 +98,7 @@ In Hough space, I can represent my **x vs. y line as a point in m vs. b instead*
 + [Color Selection](#color-selection)
 + [Canny Edge Detection](#canny-edge-detection-algorithm)
 + [Detect the edges](#detect-the-edges)
-+ [Region of Interest Selection](#region-of-interest-selection-opencv)
++ [Region of Interest Selection](#region-of-interest-selection-method)
 + [Hough Transform Line Detection](#hough-transform-line-detection)
 
 các hình ảnh input đầu vào 
@@ -126,7 +126,32 @@ def select_rgb_white_yellow(image):
 ```
 
 ![](/Resource/test_image2.png)
+
+```py
+# HSV Color Space
+import numpy as np
+import cv2
+
+def convert_hsv(image):
+    return cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
+image = convert_hsv("/Resource/test_image.png")
+cv2.imshow('test_image', image)
+```
+
+![](/Resource/test_image4.png)
+
+```py
+import numpy as np
+import cv2
+
+def convert_hls(image):
+    return cv2.cvtColor(image, cv2.COLOR_RGB2HLS)
+image = convert_hsv("/Resource/test_image.png")
+cv2.imshow('test_image', image)
+```
+
+![](/Resource/test_image5.png)
 ##### Canny Edge Detection Algorithm 
 ##### Detect the edges
-##### Region of Interest Selection OpenCV
+##### Region of Interest Selection Method
 ##### Hough Transform Line Detection
