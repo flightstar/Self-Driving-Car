@@ -225,7 +225,7 @@ def show_images(images):
 def filter_region(image, vertices):
 #   Create the mask using the vertices and apply it to the input image
     mask = np.zeros_like(image)
-#   Images 2 dimessions x, y 
+#   Defining a 3 channel, 2 channel or 1 channel color to fill the mask with depending on the input image
     if len(mask.shape) == 2:
         cv2.fillPoly(mask, vertices, 255)
     else:
