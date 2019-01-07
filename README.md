@@ -309,4 +309,9 @@ show_images(roi_images)
   ```
   
   ![](/Resource/test_image14.png)
-##### Extrapolating Land Lines
+##### Extrapolating Land Lines and Average them
+These lines are not smooth in image. Because there are multiple lines in images. We should get them and add an average line instead of them.
+
+We'll collect positive slope lines and negative slope lines separately and take averages.
+
+
