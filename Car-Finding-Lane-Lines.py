@@ -106,7 +106,7 @@ def process_video(video_input, video_output):
     detector = LaneDetector()
     clip = VideoFileClip(os.path.join('test_videos', video_input))
     # Modify a clip as you want using custom filters
-    # clip.fl(filter) with filter is a function 
+    # clip.fl_image(filter) with filter is a function 
     processed = clip.fl_image(detector.process)
     # Returns a copy of the clip with a new default fps and filter the audio
     processed.write_videofile(os.path.join('output_videos', video_output), audio=False)
