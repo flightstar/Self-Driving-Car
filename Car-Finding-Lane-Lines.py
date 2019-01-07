@@ -42,7 +42,7 @@ class LaneDetector:
 #    clip = VideoFileClip(os.path.join(test_videos, video_input))
 #    processed = clip.fl_image(detector.process)
 #    processed.write_videofile(os.path.join('output_videos', video_output), audio=False)
-def process_video(test_video, output_video, video_input, video_output):
+def process_video(video_input, video_output):
     detector = LaneDetector()
     clip = VideoFileClip(os.path.join('test_videos', video_input))
     # Modify a clip as you want using custom filters
@@ -50,5 +50,6 @@ def process_video(test_video, output_video, video_input, video_output):
     # Returns a copy of the clip with a new default fps and filter the audio
     processed.write_videofile(os.path.join('output_videos', video_output), audio=False)
     
-
-
+if __name__ = __main__:
+    
+    
