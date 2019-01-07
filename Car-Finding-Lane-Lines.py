@@ -1,9 +1,9 @@
+from collections import deque
+import cv2
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-import numpy as np
-import cv2
 from moviepy.editor import *
-from collections import deque
+import numpy as np
 
 def convert_hls(image):
     return cv2.cvtColor(image, cv2.COLOR_RGB2HLS)
