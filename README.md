@@ -182,10 +182,11 @@ def select_white_yellow(image):
     mask = cv2.bitwise_or(white_mask, yellow_mask)
     return cv2.bitwise_and(image, image, mask = mask)
 
-# test_image: Folder contain images test
-# Return a list images
-white_yellow_images = list(map(select_white_yellow, test_images))
-show_images(white_yellow_images)
+if __name__ == "__main__":
+    # test_image: Folder contain images test
+    # Return a list images
+    white_yellow_images = list(map(select_white_yellow, test_images))
+    show_images(white_yellow_images)
 ```
 ##### Canny Edge Detection Algorithm 
 ##### Detect the edges
