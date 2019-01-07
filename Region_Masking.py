@@ -3,7 +3,7 @@ import matplotlib.image as mpimg
 import numpy as np
 
 # Read in the image and print some stats
-image = mpimg.imread('test.jpg')
+image = mpimg.imread('/Resource/test.jpg')
 print('This image is: ', type(image), 
          'with dimensions:', image.shape)
 
