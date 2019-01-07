@@ -95,9 +95,13 @@ In Hough space, I can represent my **x vs. y line as a point in m vs. b instead*
    [Source Code](/Car_Finding_Lane_Lines.py)
    
 #### Terminology & analysis
-+ Color Selection
++ [Color Selection](#Color Selection)
 + Canny Edge Detection
 + Detect the edges
 + Region of Interest Selection
 + Hough Transform Line Detection
 
+các hình ảnh input đầu vào 
+
+![](/Resource/test_image1.png)
+##### Color Selection
