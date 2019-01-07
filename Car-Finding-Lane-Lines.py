@@ -5,6 +5,9 @@ import cv2
 from moviepy.editor import *
 from collections import deque
 
+def convert_hls(image):
+    return cv2.cvtColor(image, cv2.COLOR_RGB2HLS)
+
 def select_white_yellow(image):
     converted = convert_hls(image)
     # white color mask
