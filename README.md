@@ -405,8 +405,8 @@ def process_image(image):
     except Exception as error:
         return image
 
-
-test_images = [plt.imread(path) for path in glob.glob('test_images/*.jpg')]
+// Example: Resource/*.jpg
+test_images = [plt.imread(path) for path in glob.glob('Resource/*.jpg')]
 lane_images = []
 for image in test_images :
     lane_images.append(process_image(image))
