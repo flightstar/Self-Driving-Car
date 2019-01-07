@@ -141,6 +141,12 @@ class LaneDetector:
 #    clip = VideoFileClip(os.path.join(test_videos, video_input))
 #    processed = clip.fl_image(detector.process)
 #    processed.write_videofile(os.path.join('output_videos', video_output), audio=False)
+
+# def process_video(video_input, video_output):
+#    white_output = 'test_videos_output/' + video_output
+#    clip1 = VideoFileClip("test_videos/" + video_input)
+#    white_clip = clip1.fl_image(detector.process)
+#    white_clip.write_videofile(white_output, audio=False)
 def process_video(video_input, video_output):
     detector = LaneDetector()
     clip = VideoFileClip(os.path.join('test_videos', video_input))
