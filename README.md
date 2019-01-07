@@ -235,7 +235,7 @@ def canny(image):
     return cv2.Canny(image, low_threshold, high_threshold)
     
 if __name__ == "main":
-   edge_images = list(map(lambda image: detect_edges(image), blurred_images))
+   edge_images = list(map(lambda image: canny(image), blurred_images))
    show_images(edge_images)
 ```
 
@@ -389,3 +389,28 @@ if __name__ == '__main__':
 ![](/Resource/test_image15.png)
 
 ##### Image Lane Finding Pipeline
+
+```py
+def process_image(image):
+    try :
+        white_yellow_image = select_white_yellow(image)
+        gray_image = convert_gray_scale(image)
+        blurred_image = apply_smoothing(gray_image)
+        edge_image = canny(blurred_image)
+        roi_image = select_region(edge_image)
+        list_of_lines = hough_lines(roi_image)
+        result = draw_lane_lines(image, lane_lines(image, list_of_lines))
+        return result
+    except Exception as error:
+        return image
+
+
+test_images = [plt.imread(path) for path in glob.glob('test_images/*.jpg')]
+lane_images = []
+for image in test_images :
+    lane_images.append(process_image(image))
+show_images(lane_images)
+
+```
+
+![](/Resource/test_image16.png)
